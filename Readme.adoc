@@ -1,0 +1,36 @@
+= Intersectional Targeting Reveals a Refined Microcircuit Architecture of Heterogenous, Glp1r- and Lepr-expressing POMC-Neurons
+:toc:
+:repo: https://github.sf.mpg.de/bruening-lab/pomc-neurons-architecture-rnaseq
+:releases: {repo}/releases/tag
+:issues: {repo}/issues
+:docs: https://github.sf.mpg.de/bruening-lab/pomc-neurons-architecture-rnaseq
+:images: images
+
+== Overview
+
+This repo contains the RNA-Seq analysis workflow for *Intersectional Targeting Reveals a Refined Microcircuit Architecture of Heterogenous, Glp1r- and Lepr-expressing POMC-Neurons*.
+
+== Reproduce Analysis
+
+=== RNA-Seq Analysis
+
+The RNA-Seq analysis pipeline is based on the link:https://nf-co.re/rnaseq[nf-core/rnaseq] and runs on a high-performance-compute cluster equipped with Singularity for running application containers and SLURM for Job scheduling.
+
+1. Download the FASTQ file from GEO series link:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153753[GSE153753]. Save them in this repository with `nfcore-rnaseq-pipeline/raw_data`
+2. Follow the installation instructions for link:https://nf-co.re/rnaseq[nf-core/rnaseq] pipeline.
+3. Adapt the paths to Ensembl release 97 in file `mpisf-rnaseq.config` (see `genomes` section of the file) as well as `tmp` folder in `runOptions` and the `process` section
+  - You can of course use a different release, but then you likely won't get the exact same results
+  - For more details on nf-core/rnaseq configuration files, check link:https://nf-co.re/usage/configuration[the project documentation]
+4. Navigate to the `nfcore-rnaseq-pipeline` folder and run `make`
+
+=== RNA-Seq Normalisation
+
+The read normalisation is done using a custom R package. It requires you to have the RNA-Seq analysis results with this repository (see section above).
+
+You need run link:https://hub.docker.com/repository/docker/paulklemm/mytidyverse[mytidyverse-base-3.6.3-2] via Singularity.
+
+1. Edit the Singularity call in `./makefile` (line `SINGULARITY=singularity exec $(SINGULARITY_IMAGES)/mytidyverse-base-3.6.3-2.simg`)
+2. Run `make custom_scripts/bruening.2018.06.schumacher.riboseq/inst/extdata/salmon_merged_gene_counts.csv.gz`
+3. Run `make normalized_differential_expression`
+
+The analysis files can be found in the `release` folder.

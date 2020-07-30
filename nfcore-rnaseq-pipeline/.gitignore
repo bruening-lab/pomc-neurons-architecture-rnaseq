@@ -1,0 +1,7 @@
+# NFCore RNAseq pipeline
+.nextflow/
+nextflow
+results/
+work/
+raw_data/
+.nextflow.log*

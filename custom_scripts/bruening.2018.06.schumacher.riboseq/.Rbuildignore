@@ -1,0 +1,10 @@
+^renv$
+^renv\.lock$
+^LICENSE\.md$
+^packrat/
+^\.Rprofile$
+\.rdx$
+\.rdb$
+\.Rdata$
+^.*\.pdf
+^.*\.html

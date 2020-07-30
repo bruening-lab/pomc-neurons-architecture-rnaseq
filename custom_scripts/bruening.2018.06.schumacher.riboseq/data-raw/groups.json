@@ -1,0 +1,21 @@
+{
+  "groups": {
+    "glp1r": [
+      "glp1r_1",
+      "glp1r_2",
+      "glp1r_3"
+    ],
+    "lepr": [
+      "lepr_2",
+      "lepr_3",
+      "lepr_4",
+      "lepr_5"
+    ]
+  },
+  "comparisons": {
+    "glp1r_vs_lepr": {
+      "group_a": "glp1r",
+      "group_b": "lepr"
+    }
+  }
+}
