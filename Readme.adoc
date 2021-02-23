@@ -1,12 +1,10 @@
-= Intersectional Targeting Reveals a Refined Microcircuit Architecture of Heterogenous, Glp1r- and Lepr-expressing POMC-Neurons
+= Functionally Distinct Pomc-Expressing Neuron Subpopulations in Hypothalamus Revealed by Intersectional Targeting
 :toc:
 :repo: https://github.sf.mpg.de/bruening-lab/pomc-neurons-architecture-rnaseq
 :releases: {repo}/releases/tag
 :issues: {repo}/issues
 :docs: https://github.sf.mpg.de/bruening-lab/pomc-neurons-architecture-rnaseq
 :images: images
-
-IMPORTANT: This repo is part of a publication that is subject to a peer review process. Therefore, the source code is freely available, but the data deposited at GEO will be made available upon publishing the paper.
 
 == Overview
 
