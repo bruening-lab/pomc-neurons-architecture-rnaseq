@@ -8,7 +8,7 @@
 
 == Overview
 
-This repo contains the RNA-Seq analysis workflow for *Intersectional Targeting Reveals a Refined Microcircuit Architecture of Heterogenous, Glp1r- and Lepr-expressing POMC-Neurons*.
+This repo contains the RNA-Seq analysis workflow for *Functionally Distinct Pomc-Expressing Neuron Subpopulations in Hypothalamus Revealed by Intersectional Targeting*.
 
 == Reproduce Analysis
 
